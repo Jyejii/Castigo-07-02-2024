@@ -1,30 +1,31 @@
+import java.util.Scanner;
+
 public class Ejercicio4 {
-
-    public static int[][] tablaDeMultiplicar(int n) {
-        int[][] tablas = new int[n][10];
-        for (int i = 1; i <= n; i++) {
-            for (int j = 0; j < 10; j++) {
-                tablas[i - 1][j] = i * j;
-            }
-        }
-        return tablas;
-    }
-
-    public static void imprimirTablas(int[][] tablas) {
-        for (int i = 0; i < tablas.length; i++) {
-            System.out.println("Tabla de multiplicar del " + (i + 1) + ":");
-            for (int j = 0; j < 10; j++) {
-                System.out.println((i + 1) + " x " + j + " = " + tablas[i][j]);
-            }
-            System.out.println();
-        }
-    }
-
     public static void main(String[] args) {
-        int n = 10;
-        int[][] tablasMultiplicar = tablaDeMultiplicar(n);
-        imprimirTablas(tablasMultiplicar);
+        Scanner sc = new Scanner(System.in);
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+
+        System.out.println("Introduce números enteros positivos (introduce un número negativo para terminar):");
+
+        while (true) {
+            int numero = sc.nextInt();
+
+            if (numero < 0)
+                break;
+
+            if (numero < min)
+                min = numero;
+
+            if (numero > max)
+                max = numero;
+        }
+
+        if (min == Integer.MAX_VALUE && max == Integer.MIN_VALUE) {
+            System.out.println("No se introdujeron números.");
+        } else {
+            System.out.println("El mínimo de la lista es: " + min);
+            System.out.println("El máximo de la lista es: " + max);
+        }
     }
 }
-
-
