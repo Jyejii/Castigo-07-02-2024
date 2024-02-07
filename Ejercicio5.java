@@ -1,3 +1,4 @@
+//tablas de multiplicar
 public class Ejercicio5 {
 
     public static int[][] generarTablasDeMultiplicar(int n) {
