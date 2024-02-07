@@ -1,6 +1,6 @@
 import java.util.Random;
 import java.util.Scanner;
-//Matriz simetrica
+//Matriz simetrica.
 public class Ejercicio10 {
 
 
